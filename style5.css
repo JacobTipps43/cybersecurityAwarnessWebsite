@@ -1,0 +1,202 @@
+/* style5.css — adapted to use global.css variables and utilities
+   Assumes global.css is included BEFORE this file.
+   See: global.css for variable definitions. */
+
+*{ box-sizing:border-box; }
+
+/* Use the global viewport / reset from global.css (do not re-declare html,body here) */
+
+/* Page wrapper — reuse global container sizing if present, but keep .page used in HTML */
+.page{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:32px 20px 60px; /* keep page padding here rather than on body so global layout stays consistent */
+  box-sizing:border-box;
+  display:block;
+  position:relative;
+}
+
+/* Corner Icons (kept but tuned to match global brand) */
+.corner-icon{
+  position:absolute;
+  width:125px;
+  height:125px;
+  border-radius:50%;
+  background:var(--dark-navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top:20px;
+  z-index:40;
+  box-shadow:0 6px 14px rgba(0,0,0,0.25);
+}
+.corner-icon.left{ left:20px; }
+.corner-icon.right{ right:20px; }
+
+.corner-icon img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Hero Section — use global type/colors where appropriate */
+header.hero{
+  text-align:center;
+  padding-top:40px;
+  margin-bottom:22px;
+}
+header.hero h1{
+  margin:0;
+  font-family:"Montserrat",sans-serif;
+  font-weight:800;
+  letter-spacing:0.6px;
+  font-size:48px;
+  color:var(--text-dark);
+}
+
+/* Navigation pill — adapt to global variables and spacing */
+nav.pill{
+  margin:20px auto 34px;
+  display:flex;
+  justify-content:center;
+}
+
+/* Reuse primary-nav look from global.css but scoped to .nav-inner here */
+.nav-inner{
+  list-style:none;
+  margin:0;
+  padding:16px 18px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  border-radius:14px;
+  background:rgba(0,0,0,0.06); /* subtle overlay consistent with global */
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.nav-inner li{ margin:0; padding:0; }
+
+/* Animated underline for nav links — keeps interaction but inherits colors */
+.nav-inner a{
+  position:relative;
+  color:var(--text-dark);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  padding:4px 6px;
+}
+
+.nav-inner a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0;
+  height:2px;
+  background-color:var(--text-dark);
+  transition:width 0.3s ease;
+}
+
+.nav-inner a:hover::after,
+.nav-inner a.active::after{
+  width:100%;
+}
+
+/* Cards grid — keep spacing aligned with global gutter */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:var(--gutter);
+  align-items:start;
+}
+
+/* Card base — use gold card from global for visual consistency */
+.card{
+  background:var(--gold-card);
+  padding:18px;
+  border-radius:6px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.06) inset;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  color:var(--white);
+}
+
+/* Card heading */
+.card h2{
+  font-family:"Montserrat",sans-serif;
+  font-size:20px;
+  margin:0 0 6px;
+  color:var(--white);
+  font-weight:700;
+}
+
+/* Thumbnail */
+.thumb-wrap{
+  aspect-ratio:16 / 9;
+  position:relative;
+  border-radius:6px;
+  overflow:hidden;
+  background:var(--gold-light);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  display:block;
+}
+
+.thumb-wrap img,
+.thumb-wrap video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border:0;
+}
+
+/* Play Overlay — keep strong CTA but use global color tokens */
+.play-overlay{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:74px;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--gold-card);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.play-overlay::after{
+  content:'';
+  display:block;
+  margin-left:6px;
+  border-style:solid;
+  border-width:12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--white);
+}
+
+/* Footer — use global separators and white text */
+footer{
+  margin-top:32px;
+  border-top:3px solid rgba(0,0,0,0.15);
+  padding:12px 8px 0;
+  color:var(--white);
+  font-weight:600;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+footer .authors{ padding:8px 10px; }
+
+/* Responsive adjustments — keep consistent with global breakpoints */
+@media (max-width:900px){
+  .cards{ grid-template-columns: 1fr; }
+  .corner-icon{ display:none; }
+  header.hero h1{ font-size:36px; }
+  .page{ padding:22px 16px 48px; }
+}
