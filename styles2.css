@@ -1,0 +1,82 @@
+/* styles2.css - Best Practices page (page-specific)
+   Load AFTER global.css
+*/
+
+/* center the page title */
+.page-title{
+  text-align:center;
+  margin:6px 0 18px;
+  font-size:28px;
+  font-weight:800;
+  color:var(--text-dark);
+}
+
+/* Info rows: side image + gold text box */
+.info-row{
+  display:flex;
+  align-items:center;
+  gap:36px;
+  margin:18px 0;
+}
+
+/* responsive stacking */
+@media (max-width:920px){
+  .info-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+}
+
+/* Gold text box matching the global gold-card style (but slightly stronger) */
+.text-box{
+  background:var(--gold-card);
+  color:var(--white);
+  padding:18px;
+  border-radius:10px;
+  font-weight:700;
+  line-height:1.5;
+  flex:1 1 auto;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,0.06);
+}
+
+/* pill/oval side images */
+.side-img{
+  width:230px;
+  height:140px;
+  object-fit:cover;
+  border-radius:70px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+  flex-shrink:0;
+}
+
+/* smaller pills on phones */
+@media (max-width:520px){
+  .side-img{
+    width:160px;
+    height:98px;
+    border-radius:56px;
+    margin:0 auto;
+  }
+}
+
+/* helpers to control visual order (HTML order still important for accessibility) */
+.left-img{ order:0; }
+.right-img{ order:1; }
+
+/* small hover polish */
+.side-img,
+.text-box{
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.side-img:hover,
+.text-box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 30px rgba(0,0,0,0.18);
+}
+
+/* ensure page title sizing on small screens */
+@media (max-width:720px){
+  .site-title h1{ font-size:40px; }
+  .page-title{ font-size:20px; }
+}

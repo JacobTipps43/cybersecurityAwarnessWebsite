@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz — Cybersecurity Awareness</title>
+
+  <!-- load shared styles first -->
+  <link rel="stylesheet" href="global.css" />
+  <!-- page-specific styles -->
+  <link rel="stylesheet" href="styles3.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="logo-left">
+        <img src="Pictures/shield.jpg" alt="Security Shield logo left">
+      </div>
+
+      <div class="site-title">
+        <h1>Quiz</h1>
+        <h2>Security Awareness</h2>
+      </div>
+
+      <div class="logo-right">
+        <img src="Pictures/shield.jpg" alt="Security Shield logo right">
+      </div>
+    </div>
+
+    <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list container">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="best-practices.html">Best Practices</a></li>
+        <li><a href="#">Types of Malware</a></li>
+        <li><a href="#">Phishing &amp; Social Engineering</a></li>
+        <li><a href="quiz.html" aria-current="page">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content container" id="main">
+    <section class="quiz-section" aria-labelledby="q1-title">
+      <article class="quiz-card" role="region" aria-describedby="q1-desc">
+        <!-- Question -->
+        <h2 id="q1-title" class="question">Question 1 — When you receive an unexpected email with an attachment, what do you do first?</h2>
+
+        <!-- Options list (buttons are keyboard accessible) -->
+        <div id="q1-desc" class="options" role="list" aria-label="Answer options">
+          <div role="listitem"><button class="option-btn" type="button">Check the sender and verify</button></div>
+          <div role="listitem"><button class="option-btn" type="button">Open the attachment immediately</button></div>
+          <div role="listitem"><button class="option-btn" type="button">Forward to everyone</button></div>
+          <div role="listitem"><button class="option-btn" type="button">Click links in the email</button></div>
+        </div>
+
+        <!-- Optional: small feedback area (non-functional placeholder) -->
+        <div class="quiz-footer" aria-hidden="true" style="margin-top:18px;text-align:center;color:rgba(0,0,0,0.6);font-weight:700;">
+          Click an answer to continue.
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer container" role="contentinfo">
+    <div class="separator" aria-hidden="true"></div>
+    <div class="inner">
+      <strong>Copyright Jacob Tippet &amp; Jack Melogy</strong>
+    </div>
+  </footer>
+</body>
+</html>

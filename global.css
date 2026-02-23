@@ -1,0 +1,79 @@
+/* global.css - shared for all pages */
+:root{
+  --purple-bg: #9c9abf;
+  --gold-card: #b0953d;
+  --gold-light: #ead87e;
+  --dark-navy: #0b1726;
+  --text-dark: #0b0b0b;
+  --white: #ffffff;
+  --max-width: 1150px;
+  --transition: 180ms ease;
+  --gutter: 24px;
+}
+
+/* reset & base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%;background:var(--purple-bg);font-family:Segoe UI, Roboto, Arial, sans-serif;color:var(--text-dark);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+
+/* layout */
+body{display:flex;flex-direction:column;align-items:center;padding:20px;gap:14px}
+.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);box-sizing:border-box}
+
+/* header */
+.site-header{width:100%;max-width:var(--max-width);position:relative;padding:20px 20px 10px;display:flex;flex-direction:column;align-items:center}
+.header-inner{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo-left,.logo-right{width:125px;height:125px;border-radius:50%;overflow:hidden;flex:0 0 125px;background:#0a1730;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+.logo-left img,.logo-right img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.site-title{text-align:center;flex:1}
+.site-title h1{margin:0;font-size:56px;font-weight:800;line-height:1}
+.site-title h2{margin:6px 0 0;font-size:18px;font-weight:600;color:rgba(0,0,0,0.7)}
+
+/* pill navigation */
+/* primary nav: use flex, full-width centered pill */
+.primary-nav{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:15px;
+  background:rgba(0,0,0,0.08);
+  padding:10px 20px;
+  border-radius:30px;
+  box-sizing:border-box;
+}
+
+/* the UL holds the items and can wrap responsively */
+.primary-nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:22px;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* links */
+.primary-nav a{
+  color:var(--text-dark);
+  font-weight:700;
+  text-decoration:underline;
+  padding:6px 8px;
+  transition:var(--transition);
+}
+
+/* gold-card utility */
+.gold-card{background:var(--gold-card);color:var(--white);padding:20px;border-radius:10px;font-weight:700}
+
+/* footer */
+.site-footer{width:100%;max-width:var(--max-width);margin-top:40px;padding:0 var(--gutter)}
+.separator{border-top:3px solid #000;margin-bottom:8px}
+.site-footer .inner{padding:10px 0;font-weight:800;color:var(--white);text-align:left}
+
+/* responsive */
+@media (max-width:900px){
+  .header-inner{flex-direction:column;gap:10px;align-items:center;text-align:center}
+  .site-title h1{font-size:42px}
+  .primary-nav ul{flex-wrap:wrap;justify-content:center}
+}

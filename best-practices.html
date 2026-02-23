@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Best Practices — Cybersecurity</title>
+
+  <!-- load shared global styles first -->
+  <link rel="stylesheet" href="global.css" />
+  <!-- then the page-specific overrides -->
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="logo-left">
+        <img src="Pictures/shield.jpg" alt="Security Shield logo left">
+      </div>
+
+      <div class="site-title">
+        <h1>Best Practices</h1>
+      </div>
+
+      <div class="logo-right">
+        <img src="Pictures/shield.jpg" alt="Security Shield logo right">
+      </div>
+    </div>
+
+    <!-- single semantic nav -->
+    <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list container">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="best-practices.html" aria-current="page">Best Practices</a></li>
+        <li><a href="#">Types of Malware</a></li>
+        <li><a href="#">Phishing &amp; Social Engineering</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content container" id="main">
+    <!-- intro / hero strip (optional small lead) -->
+    
+
+    <!-- Info rows: alternate image/text order visually by placing img before or after the text -->
+    <section class="info-row">
+      <img src="Pictures/emails.jpg" alt="Email security illustration" class="side-img left-img">
+      <div class="text-box">
+        <p><strong>Check sender and links.</strong> Before clicking any links or opening attachments check the sender address, look for typos, verify unexpected requests by calling or messaging the sender via known channels.</p>
+      </div>
+    </section>
+
+    <section class="info-row">
+      <div class="text-box">
+        <p><strong>Keep software updated.</strong> Install updates for OS, browsers and critical tools promptly — updates often patch security issues attackers exploit.</p>
+      </div>
+      <img src="Pictures/passwords-verification.jpg" alt="Security dashboard" class="side-img right-img">
+    </section>
+
+    <section class="info-row">
+      <img src="Pictures/vpns.jpg" alt="VPN illustration" class="side-img left-img">
+      <div class="text-box">
+        <p><strong>Use secure networks.</strong> Avoid public Wi-Fi for sensitive tasks; use a trusted VPN and prefer known cellular or home networks for confidential work.</p>
+      </div>
+    </section>
+
+    <section class="info-row">
+      <div class="text-box">
+        <p><strong>Enable multi-factor authentication (MFA).</strong> MFA greatly reduces account takeover risk — enable whenever available (especially for email, cloud storage, admin tools).</p>
+      </div>
+      <img src="Pictures/mfa.jpg" alt="Multi-factor authentication" class="side-img right-img">
+    </section>
+
+    <section class="info-row">
+      <img src="Pictures/hacked.jpg" alt="Hacked warning" class="side-img left-img">
+      <div class="text-box">
+        <p><strong>If you suspect compromise.</strong> Disconnect from the network, change passwords from a known-good device, notify IT/security, and follow incident reporting procedures.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container" role="contentinfo">
+    <div class="separator" aria-hidden="true"></div>
+    <div class="inner">
+      Copyright Jacob Tippet &amp; Jack Melogy
+    </div>
+  </footer>
+</body>
+</html>

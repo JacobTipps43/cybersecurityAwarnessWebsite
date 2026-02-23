@@ -1,0 +1,103 @@
+/* styles3.css - Quiz page (load AFTER global.css)
+   Page-specific layout & UI for the quiz
+*/
+
+/* ensure header title sizing for this page */
+.site-title h1{ font-size:56px; margin:0; }
+.site-title h2{ margin:6px 0 0; font-size:18px; font-weight:600; color:rgba(0,0,0,0.7); }
+
+/* Center the quiz area and limit width */
+.quiz-section{
+  width:100%;
+  max-width:980px;
+  margin:18px auto;
+  padding:12px 20px;
+  box-sizing:border-box;
+  display:flex;
+  justify-content:center;
+}
+
+/* The big rounded quiz card */
+.quiz-card{
+  width:100%;
+  background:var(--gold-card);
+  border-radius:26px;
+  padding:36px;
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  box-shadow: 0 14px 0 rgba(0,0,0,0.08) inset;
+}
+
+/* Question pill (contrasting light gold) */
+.question{
+  margin:0 auto;
+  width:100%;
+  background:var(--gold-light);
+  color:var(--text-dark);
+  border-radius:42px;
+  padding:22px 18px;
+  font-size:20px;
+  font-weight:800;
+  text-align:center;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.07);
+}
+
+/* Options stack as large pill buttons */
+.options{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
+}
+
+/* Option button styling */
+.option-btn{
+  width:100%;
+  background:var(--gold-light);
+  color:var(--text-dark);
+  border:0;
+  border-radius:36px;
+  padding:20px 28px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.07);
+  transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition);
+}
+
+/* Hover/Focus states (subtle color change) */
+.option-btn:hover,
+.option-btn:focus{
+  transform: translateY(-4px);
+  background-color:#e9d77f; /* slightly darker light-gold */
+  box-shadow: 0 14px 0 rgba(0,0,0,0.09);
+  outline:none;
+}
+
+/* Make options keyboard accessible visual focus clearer */
+.option-btn:focus{
+  box-shadow: 0 14px 0 rgba(0,0,0,0.09), 0 0 0 4px rgba(0,0,0,0.06);
+}
+
+/* Keep logos visible and positioned (global has container positioning) */
+.logo-left{ position:absolute; left:12px; top:8px; }
+.logo-right{ position:absolute; right:12px; top:8px; }
+
+/* Footer tweaks for quiz page */
+.site-footer{
+  width:100%;
+  max-width:980px;
+  margin-top:22px;
+  box-sizing:border-box;
+}
+.site-footer .inner{ text-align:left; color:var(--white); font-weight:800; }
+
+/* Responsive: stack and reduce padding on small screens */
+@media (max-width:720px){
+  .quiz-card{ padding:24px; min-height:auto; }
+  .question{ width:94%; padding:16px; font-size:18px; border-radius:36px; }
+  .option-btn{ width:92%; padding:16px; font-size:16px; border-radius:30px; }
+}
