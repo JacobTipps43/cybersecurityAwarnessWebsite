@@ -1,0 +1,111 @@
+/* styles.css - freshman simple + centered testimonials + purple about background */
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Arial, Helvetica, sans-serif;color:#111}
+img{max-width:100%;display:block}
+
+/* Header */
+.site-header{background:#9b96b6;padding:18px 12px;border-bottom:2px solid #777}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo-left,.logo-right{width:125px;height:125px;border-radius:50%;background:#0a1730;display:flex;align-items:center;justify-content:center}
+.logo-left img,.logo-right img{width:125px;height:125px;border-radius:50%;object-fit:cover}
+.site-title{text-align:center}
+.site-title h1{margin:0;font-size:28px}
+.site-title h2{margin:0;font-size:18px}
+
+/* Navigation */
+.nav-wrap{margin-top:12px}
+.nav-list{list-style:none;padding:0;margin:0;display:flex;gap:12px;justify-content:center}
+.nav-list li a{display:inline-block;padding:8px 12px;color:#111;text-decoration:none;font-weight:700}
+.nav-list li a:hover{text-decoration:underline}
+
+/* Hero / testimonials */
+.hero{background:#0a1730;background-image:url('assets/binary-bg.jpg');background-size:cover;background-position:center;padding:40px 12px}
+.content{max-width:800px;margin:0 auto}
+
+/* CENTERED testimonials box */
+.testimonials{
+  background:#b9a54a;
+  padding:24px;
+  border-radius:6px;
+  text-align:center;              /* centers heading + text */
+}
+
+.testimonials h3{margin:0 0 16px}
+
+.testimonial-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;             /* centers each testimonial block */
+}
+
+.testimonial{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  max-width:600px;                /* keeps them nicely centered */
+}
+
+.testimonial .avatar{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  overflow:hidden;
+  flex:0 0 64px;
+}
+
+.testimonial .quote{font-weight:700;margin:0}
+.testimonial .author{margin:4px 0 0;font-weight:800}
+
+/* ABOUT SECTION - purple background behind it */
+.two-col{
+  background:#9b96b6;             /* same purple as header */
+  padding:30px 12px;
+}
+
+.two-col{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+}
+
+.panel{
+  flex:1;
+  max-width:500px;
+  background:#b9a54a;
+  padding:18px;
+  border:2px solid rgba(0,0,0,0.25);
+  border-radius:6px;
+}
+
+.panel h2{margin-top:0}
+
+.author-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:12px;
+}
+
+.author-card .avatar{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  overflow:hidden;
+  flex:0 0 80px;
+}
+
+.author-card p{margin:0}
+
+/* Footer */
+.site-footer{background:#9b96b6;padding:10px 0;border-top:2px solid #777;margin-top:0}
+.site-footer .inner{max-width:1100px;margin:0 auto;text-align:center}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+  .header-inner{flex-direction:column;gap:8px}
+  .two-col{flex-direction:column;align-items:center}
+  .testimonial{flex-direction:column;text-align:center}
+}

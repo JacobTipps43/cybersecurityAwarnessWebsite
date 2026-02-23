@@ -1,0 +1,145 @@
+/* ================= ROOT VARIABLES ================= */
+:root{
+  --bg: #9c9abf;
+  --nav-bg: rgba(0,0,0,0.07);
+  --card-bg: #b0953d;
+  --pill-bg: #ead87e;
+  --text-dark: #0f0f0f;
+  --max-width: 980px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ================= BASE ================= */
+body{
+  margin:0;
+  background:var(--bg);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:32px 16px;
+}
+
+/* ================= HEADER ================= */
+.site-header{
+  width:100%;
+  max-width:var(--max-width);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  margin-bottom:22px;
+}
+
+/* Logo images */
+.logo{
+  width:125px;
+  height:125px;
+  border-radius:50%;        /* Makes image perfectly round */
+  object-fit:cover;         /* Ensures image fills the circle properly */
+  position:absolute;
+  top:0;
+}
+
+.logo-left{
+  left:0;
+}
+
+.logo-right{
+  right:0;
+}
+
+/* Title */
+.site-title{
+  font-size:56px;
+  font-weight:800;
+  margin:20px 0 0 0;
+}
+
+/* ================= NAVIGATION ================= */
+.primary-nav{
+  background:var(--nav-bg);
+  border-radius:28px;
+  padding:10px 20px;
+}
+
+.primary-nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:26px;
+}
+
+.primary-nav a{
+  text-decoration:underline;
+  font-weight:700;
+  color:var(--text-dark);
+}
+
+/* ================= MAIN QUIZ CARD ================= */
+.quiz-section{
+  width:100%;
+  max-width:var(--max-width);
+}
+
+.quiz-card{
+  background:var(--card-bg);
+  border-radius:26px;
+  padding:36px;
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+.question{
+  background:var(--pill-bg);
+  border-radius:40px;
+  padding:22px;
+  text-align:center;
+  font-weight:800;
+  font-size:20px;
+}
+
+/* Options */
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
+}
+
+.option-btn{
+  width:80%;
+  background:var(--pill-bg);
+  border:none;
+  border-radius:40px;
+  padding:22px;
+  font-weight:700;
+  font-size:18px;
+  cursor:pointer;
+  transition:transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover effect */
+.option-btn:hover{
+  transform:translateY(-4px);
+  background-color:#e2cc6a; /* slightly darker shade */
+}
+
+/* ================= FOOTER ================= */
+.site-footer{
+  width:100%;
+  max-width:var(--max-width);
+  margin-top:20px;
+}
+
+.separator{
+  border-top:3px solid black;
+  margin-bottom:8px;
+}
+
+.site-footer p{
+  margin:0;
+  font-weight:800;
+}
