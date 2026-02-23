@@ -1,0 +1,218 @@
+:root{
+  --bg:#9ea6c6;
+  --panel:#a9b0cf;
+  --accent:#cdb24f;
+  --card-bg:#d0b84c;
+  --card-inner:#f7f2e7;
+  --nav-text:#0b0b0b;
+  --muted:#6a6f7f;
+  --max-width:1200px;
+  --gutter:28px;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#0b0b0b;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:32px 20px 60px;
+  display:flex;
+  justify-content:center;
+}
+
+.page{
+  width:100%;
+  max-width:var(--max-width);
+  display:block;
+}
+
+/* Corner Icons */
+.corner-icon{
+  position:absolute;
+  width:125px;
+  height:125px;
+  border-radius:50%;
+  background:#071022;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top:20px;
+  z-index:40;
+  box-shadow:0 6px 14px rgba(0,0,0,0.25);
+}
+.corner-icon.left{ left:20px; }
+.corner-icon.right{ right:20px; }
+
+.corner-icon img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Hero Section */
+header.hero{
+  text-align:center;
+  padding-top:40px;
+  margin-bottom:22px;
+}
+header.hero h1{
+  margin:0;
+  font-family:"Montserrat",sans-serif;
+  font-weight:800;
+  letter-spacing:0.6px;
+  font-size:48px;
+  color:#0b0b0b;
+}
+
+/* Navigation */
+nav.pill{
+  margin:20px auto 34px;
+  display:flex;
+  justify-content:center;
+}
+
+.nav-inner{
+  list-style:none;
+  margin:0;
+  padding:16px 18px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  border-radius:14px;
+  background:var(--panel);
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.nav-inner li{ margin:0; padding:0; }
+
+/* ===== UPDATED NAV LINKS WITH ANIMATED UNDERLINE ===== */
+.nav-inner a{
+  position:relative;
+  color:var(--nav-text);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  padding:4px 6px;
+}
+
+.nav-inner a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0;
+  height:2px;
+  background-color:var(--nav-text);
+  transition:width 0.3s ease;
+}
+
+.nav-inner a:hover::after{
+  width:100%;
+}
+
+.nav-inner a.active::after{
+  width:100%;
+}
+/* ===================================================== */
+
+/* ---------- GRID: two equal columns ---------- */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:28px;
+  align-items:start;
+}
+
+/* Card base */
+.card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:6px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.06) inset;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* Card heading */
+.card h2{
+  font-family:"Montserrat",sans-serif;
+  font-size:20px;
+  margin:0 0 6px;
+  color:#ffffff;
+  font-weight:700;
+}
+
+/* Thumbnail */
+.thumb-wrap{
+  aspect-ratio:16 / 9;
+  position:relative;
+  border-radius:6px;
+  overflow:hidden;
+  background:var(--card-inner);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  display:block;
+}
+
+.thumb-wrap img,
+.thumb-wrap video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border:0;
+}
+
+/* Play Overlay */
+.play-overlay{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:74px;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background: rgba(255,0,0,0.95);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.play-overlay::after{
+  content:'';
+  display:block;
+  margin-left:6px;
+  border-style:solid;
+  border-width:12px 0 12px 20px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+/* Footer */
+footer{
+  margin-top:32px;
+  border-top:3px solid rgba(0,0,0,0.15);
+  padding:12px 8px 0;
+  color:#ffffff;
+  font-weight:600;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+footer .authors{ padding:8px 10px; }
+
+/* Responsive */
+@media (max-width:900px){
+  .cards{ grid-template-columns: 1fr; }
+  .corner-icon{ display:none; }
+  header.hero h1{ font-size:36px; }
+}
